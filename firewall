@@ -1,0 +1,47 @@
+install firewall ubuntu server side
+
+sudo apt update
+sudo apt install ufw
+
+sudo ufw status
+
+
+sudo ufw default deny incoming
+sudo ufw default allow outgoing
+
+sudo ufw allow ssh
+sudo ufw allow 2222/tcp
+
+sudo ufw allow http
+sudo ufw allow 80/tcp
+
+sudo ufw allow https
+sudo ufw allow 443/tcp
+
+sudo ufw allow 3000:4000/tcp
+
+sudo ufw allow from 192.168.1.100 to any port 22
+
+sudo ufw enable
+
+sudo ufw status
+
+sudo ufw deny 23/tcp
+
+sudo ufw status numbered
+
+sudo ufw delete 2
+
+sudo ufw reset
+
+sudo ufw disable
+
+sudo ufw allow in on eth0 to any port 80
+
+sudo ufw limit ssh
+
+sudo ufw logging on
+
+sudo ufw logging medium
+
+sudo tail -f /var/log/ufw.log
